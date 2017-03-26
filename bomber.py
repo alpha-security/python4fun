@@ -42,6 +42,7 @@ def SendNotif(msg,smtp_server1,smtp_port1,mail_to_use1,mail_password1,target1):
     mail.sendmail(mail_to_use,target1,msg.as_string())
     mail.close()
 
+print " "
 print "[*] Starting the bomber..."
 print " "
 
