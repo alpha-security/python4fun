@@ -1,6 +1,7 @@
 #If you don't have email.mime.text installed use: 'sudo pip install email' to install it to make the program work
 import smtplib
 from email.mime.text import MIMEText
+import getpass
 
 print "                                                                                                                                    "
                                                                                                                                     
@@ -29,8 +30,8 @@ number_to_send = raw_input("Enter the number of emails you want to send: ")
 target = raw_input("Targets Email: ")
 smtp_server = raw_input("SMTP server you want to use to send the mails: ")
 smtp_port = input("Enter the port your smtp server runs on: ")
-mail_to_use = raw_input("Enter your email: ")
-mail_password = raw_input("Enter your mails password: ")
+mail_to_use = getpass.getpass("Enter your email: ")
+mail_password = getpass.getpass('Password:')
 message = raw_input("Enter the message you want to send to the target: ")
 
 def SendNotif(msg,smtp_server1,smtp_port1,mail_to_use1,mail_password1,target1):
