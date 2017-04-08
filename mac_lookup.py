@@ -1,6 +1,12 @@
 #Python3 script that looks up a mac address in seconds
 import sys
 
+if len(sys.argv) < 2:
+    sys.exit("Usage: 'python3 mac_lookup.py [MAC ADDRESS]'")
+
+else:
+    address = sys.argv[1]
+
 #The list the website data we scrape will be added to
 website_data = []
 
@@ -15,10 +21,6 @@ try:
 except ImportError as msg:
     print(msg)
     sys.exit("This tool requires the 'requests' module in order to run. Install it using: 'pip3 install requests'")
-
-print(" ")
-
-address = input("Enter the mac address to look up: ")
 
 #Checking if the length of the entered address is valid
 if len(address) != 17:
